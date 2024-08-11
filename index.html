@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo"><img src="images/logo6.png" alt="Logo"></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        <div class="search">
+            <i class="fas fa-search"></i>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+            <div class="cart-icon">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mobile-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-slider">
+                <div class="hero-slide">
+                    <img src="images/hot2.jpg" alt="Hero Banner 1">
+                </div>
+                <div class="hero-slide">
+                    <img src="images/hot3.jpg" alt="Hero Banner 2">
+                </div>
+                <!-- Add  slides  -->
+            </div>
+        </section>
+        
+        
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div id="featured-products-container"></div>
+        </section>
+        
+        <section class="categories">
+            <h2>Shop by Category</h2>
+            <div class="categories-container">
+                <div class="category">
+                    <img src="images/electronics.png" alt="Electronics">
+                    <div class="category-info">
+                        <h3>Electronics</h3>
+                        <p>Discover a wide range of the latest electronics including smartphones, laptops, and more.</p>
+                        <a href="product.html" class="category-link">Explore Electronics</a>
+                    </div>
+                </div>
+                <div class="category">
+                    <img src="images/fashion.png" alt="Fashion">
+                    <div class="category-info">
+                        <h3>Fashion</h3>
+                        <p>Stay stylish with our selection of the latest fashion trends in clothing, shoes, and accessories.</p>
+                        <a href="product.html" class="category-link">Browse Fashion</a>
+                    </div>
+                </div>
+                <div class="category">
+                    <img src="images/home.png" alt="Home & Kitchen">
+                    <div class="category-info">
+                        <h3>Home & Kitchen</h3>
+                        <p>Upgrade your home with quality appliances, cookware, and decor items.</p>
+                        <a href="product.html" class="category-link">Shop Home & Kitchen</a>
+                    </div>
+                </div>
+                <div class="category">
+                    <img src="images/beauty.png" alt="Health & Beauty">
+                    <div class="category-info">
+                        <h3>Health & Beauty</h3>
+                        <p>Find top-rated health and beauty products to keep you looking and feeling your best.</p>
+                        <a href="product.html" class="category-link">Explore Health & Beauty</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo"><img src="images/logo6.png" alt="Logo"></div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Contact us: <a href="mailto:c.y.e@gmail.com">+2348167719183</a></p>
+                <p>&copy; 2024 C.Y.E. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="main.js"></script>
+</body>
+</html>
+
+<script>
+function updateCartCounter() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+updateCartCounter();
+</script>
